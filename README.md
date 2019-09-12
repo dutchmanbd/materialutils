@@ -26,11 +26,11 @@ Suppose you have some views like TextView, ProgressBar. TextView id is tvName an
 You can easily show and hide those views using following code:
 
 ### Show views:
-tvName.show() <br/>
+tvName.show()
 pbMain.show()
 
 ### Hide views:
-tvName.hide()<br/>
+tvName.hide()
 pbMain.hide()
 
 ### Init SharedPreference Util
