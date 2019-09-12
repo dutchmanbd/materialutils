@@ -22,16 +22,14 @@ dependencies {
 
 ### How to use
 
-Suppose you have some views like TextView, ProgressBar. TextView id is tvName and ProgressBar is is pbMain.
+Suppose you have some views like TextView, ProgressBar. TextView id is tvName.
 You can easily show and hide those views using following code:
 
 ### Show views:
 tvName.show()
-pbMain.show()
 
 ### Hide views:
 tvName.hide()
-pbMain.hide()
 
 ### Init SharedPreference Util
 val sharedPref = SharedPref(context)
@@ -43,7 +41,7 @@ val name = sharedPref.read(YOUR_KEY, DEFAULT_VALUE)
 ### DEFAULT_VALUE must be String, Int, Boolean
 
 ### Example
-```
+```bash
 String
 val name: String = sharedPref.read(YOUR_KEY, "")
 Int
