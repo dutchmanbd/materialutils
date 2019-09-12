@@ -1,7 +1,23 @@
 # MaterialUtils
 Material Util Project Demo
 
-How to use
+# Install Library
+Add it in your root build.gradle at the end of repositories:
+
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+}
+
+Add the dependency
+
+dependencies {
+	        implementation 'com.github.dutchmanbd:materialutils:0.1.0'
+}
+
+# How to use
 
 Suppose you have some views like TextView, ProgressBar. TextView id is tvName and ProgressBar is is pbMain.
 You can easily show and hide those views using following code:
