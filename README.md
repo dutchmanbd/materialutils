@@ -23,7 +23,10 @@ val name = sharedPref.read(YOUR_KEY, DEFAULT_VALUE)
 
 # DEFAULT_VALUE must be String, Int, Boolean
 
-# Example
+# String
 val name: String = sharedPref.read(YOUR_KEY, "")
+
+# Int
 val name: Int = sharedPref.read(YOUR_KEY, 0)
+# Boolean
 val name: Boolean = sharedPref.read(YOUR_KEY, false)
