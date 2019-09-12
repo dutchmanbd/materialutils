@@ -4,7 +4,7 @@ Material Util Project Demo
 ## Get Started
 Add it in your root build.gradle at the end of repositories:
 
-```bash
+```
 allprojects {
 	repositories {
 		...
@@ -14,7 +14,7 @@ allprojects {
 ```
 Add the dependency
 
-```bash
+```
 dependencies {
 	implementation 'com.github.dutchmanbd:materialutils:0.1.0'
 }
@@ -41,7 +41,7 @@ val name = sharedPref.read(YOUR_KEY, DEFAULT_VALUE)
 ### DEFAULT_VALUE must be String, Int, Boolean
 
 ### Example
-```bash
+```
 String
 val name: String = sharedPref.read(YOUR_KEY, "")
 Int
