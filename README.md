@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/dutchmanbd/materialutils.svg?branch=master)](https://travis-ci.org/dutchmanbd/materialutils)
 [![GitHub issues](https://img.shields.io/github/issues/dutchmanbd/materialutils)](https://github.com/dutchmanbd/materialutils/issues)
 
-Material Util Project
+Material Util Project For Kotlin
 
 ## Get Started
 Add it in your root build.gradle at the end of repositories:
