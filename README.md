@@ -28,13 +28,13 @@ dependencies {
 Suppose you have some views like as TextView, ProgressBar. If TextView ID is tvName and ProgressBar ID is pbMain.
 Then you can easily show and hide those views using following code:
 
-### Show views:
+#### Show views:
 ```
 tvName.show()
 pbMain.show()
 ```
 
-### Hide views:
+#### Hide views:
 ```
 tvName.hide()
 pbMain.hide()
