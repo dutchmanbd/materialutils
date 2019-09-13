@@ -43,7 +43,7 @@ val name = sharedPref.read(YOUR_KEY, DEFAULT_VALUE)
 
 ### DEFAULT_VALUE must be String, Int, Boolean
 
-### Example
+#### Example
 ```
 String
 val name: String = sharedPref.read(YOUR_KEY, "")
@@ -51,4 +51,17 @@ Int
 val name: Int = sharedPref.read(YOUR_KEY, 0)
 Boolean
 val name: Boolean = sharedPref.read(YOUR_KEY, false)
+```
+### Write data to sharedPref
+
+sharedPref.write(YOUR_KEY, "Jewel")
+
+#### Example
+```
+String
+sharedPref.write(YOUR_KEY, "Jewel")
+Int
+sharedPref.write(YOUR_KEY, 704)
+Boolean
+sharedPref.write(YOUR_KEY, true)
 ```
