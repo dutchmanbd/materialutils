@@ -66,9 +66,9 @@ val name = sharedPref.read(YOUR_KEY, DEFAULT_VALUE)
 String
 val name: String = sharedPref.read(YOUR_KEY, "")
 Int
-val name: Int = sharedPref.read(YOUR_KEY, 0)
+val id: Int = sharedPref.read(YOUR_KEY, 0)
 Boolean
-val name: Boolean = sharedPref.read(YOUR_KEY, false)
+val isAvailable: Boolean = sharedPref.read(YOUR_KEY, false)
 ```
 ### Write data to sharedPref
 
