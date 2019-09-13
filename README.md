@@ -22,6 +22,7 @@ dependencies {
 	implementation 'com.github.dutchmanbd:materialutils:0.1.0'
 }
 ```
+## View Extensions
 
 ### How to use
 
@@ -39,7 +40,7 @@ pbMain.show()
 tvName.hide()
 pbMain.hide()
 ```
-
+## Context Extension
 ### Show toast from activity
 ```
 toast("Your message here")
@@ -49,8 +50,9 @@ toast("Your message here")
 ```
 context?.toast("Your message here")
 ```
+## SharedPreference
 
-### Init SharedPreference Util
+### Init SharedPref
 val sharedPref = SharedPref(context)
 
 ### Read data from sharedPref
