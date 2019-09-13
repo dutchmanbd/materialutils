@@ -25,14 +25,20 @@ dependencies {
 
 ### How to use
 
-Suppose you have some views like TextView, ProgressBar. TextView id is tvName.
-You can easily show and hide those views using following code:
+Suppose you have some views like as TextView, ProgressBar. If TextView ID is tvName and ProgressBar ID is pbMain.
+Then you can easily show and hide those views using following code:
 
 ### Show views:
+```
 tvName.show()
+pbMain.show()
+```
 
 ### Hide views:
+```
 tvName.hide()
+pbMain.hide()
+```
 
 ### Show toast from activity
 ```
