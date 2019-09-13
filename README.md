@@ -34,6 +34,16 @@ tvName.show()
 ### Hide views:
 tvName.hide()
 
+### Show Toast from activity
+```
+toast("Your message here")
+```
+#Show Toast from fragment
+
+```
+context?.toast("Your message here")
+```
+
 ### Init SharedPreference Util
 val sharedPref = SharedPref(context)
 
