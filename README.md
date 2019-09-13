@@ -34,11 +34,11 @@ tvName.show()
 ### Hide views:
 tvName.hide()
 
-### Show Toast from activity
+### Show toast from activity
 ```
 toast("Your message here")
 ```
-#Show Toast from fragment
+### Show Toast from fragment
 
 ```
 context?.toast("Your message here")
