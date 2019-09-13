@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/dutchmanbd/materialutils.svg?branch=master)](https://travis-ci.org/dutchmanbd/materialutils)
 [![GitHub issues](https://img.shields.io/github/issues/dutchmanbd/materialutils)](https://github.com/dutchmanbd/materialutils/issues)
 
-Material Util Project Demo
+Material Util Project
 
 ## Get Started
 Add it in your root build.gradle at the end of repositories:
@@ -72,12 +72,12 @@ val name: Boolean = sharedPref.read(YOUR_KEY, false)
 ```
 ### Write data to sharedPref
 
-sharedPref.write(YOUR_KEY, "Jewel")
+sharedPref.write(YOUR_KEY, "dutchman")
 
 #### Example
 ```
 String
-sharedPref.write(YOUR_KEY, "Jewel")
+sharedPref.write(YOUR_KEY, "dutchman")
 Int
 sharedPref.write(YOUR_KEY, 704)
 Boolean
