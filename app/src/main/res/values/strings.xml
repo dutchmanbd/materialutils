@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MaterialUtils</string>
+    <string name="txt_show_toast">Show Toast</string>
+    <string name="txt_write_data">Write Data</string>
+    <string name="hint_read_data">Read Data to click Read button</string>
+    <string name="txt_read_data">Read Data</string>
+    <string name="hint_data">Write something to storage</string>
+    <string name="txt_hide_all">Hide All</string>
+    <string name="txt_show_all">Show All</string>
 </resources>
