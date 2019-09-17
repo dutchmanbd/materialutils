@@ -1,5 +1,6 @@
 # MaterialUtils
 [![Build Status](https://travis-ci.org/dutchmanbd/materialutils.svg?branch=master)](https://travis-ci.org/dutchmanbd/materialutils)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8b09abd111b43878ac55929b28485cd)](https://www.codacy.com/manual/dutchmanbd/materialutils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dutchmanbd/materialutils&amp;utm_campaign=Badge_Grade)
 [![GitHub issues](https://img.shields.io/github/issues/dutchmanbd/materialutils)](https://github.com/dutchmanbd/materialutils/issues)
 
 Material Util Project For Kotlin
