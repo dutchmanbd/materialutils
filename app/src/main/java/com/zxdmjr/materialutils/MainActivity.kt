@@ -2,6 +2,7 @@ package com.zxdmjr.materialutils
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import com.zxdmjr.material_utils.SharedPref
 import com.zxdmjr.material_utils.hide
 import com.zxdmjr.material_utils.show
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnShowToast.setOnClickListener {
-            toast("Hello Toast")
+            toast("Hello Toast", position = Gravity.TOP)
         }
 
         btnWriteData.setOnClickListener {
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             val data = sharedPref.read(DATA_KEY, "")
 
             if(data.isNullOrEmpty()){
-                toast("No available data")
+                toast("No available data", position = Gravity.TOP)
                 return@setOnClickListener
             }
             tvReadData.text = data

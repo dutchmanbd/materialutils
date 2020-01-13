@@ -1,6 +1,8 @@
 package com.zxdmjr.material_utils
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 
@@ -12,7 +14,10 @@ fun View.hide(){
     visibility = View.GONE
 }
 
-fun Context.toast(message: String, length: Int = Toast.LENGTH_SHORT){
-    Toast.makeText(this, message, length).show()
+
+fun Context.toast(message: String, length: Int = Toast.LENGTH_SHORT, position: Int = Gravity.BOTTOM){
+    val toast = Toast.makeText(this, message, length)
+    toast.setGravity(position, 0, 0)
+    toast.show()
 }
 
