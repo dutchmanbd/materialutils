@@ -6,13 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnShowToast"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txt_show_toast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/etData"
+        android:hint="@string/hint_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/btnShowToast"
+        app:layout_constraintStart_toStartOf="@+id/btnShowToast"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowToast"
+        />
+
+    <Button
+        android:id="@+id/btnWriteData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_write_data"
+        app:layout_constraintEnd_toEndOf="@+id/etData"
+        app:layout_constraintStart_toStartOf="@+id/etData"
+        app:layout_constraintTop_toBottomOf="@+id/etData" />
+
+    <TextView
+        android:id="@+id/tvReadData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hint_read_data"
+        app:layout_constraintEnd_toEndOf="@+id/btnWriteData"
+        app:layout_constraintStart_toStartOf="@+id/btnWriteData"
+        app:layout_constraintTop_toBottomOf="@+id/btnWriteData" />
+
+    <Button
+        android:id="@+id/btnReadData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_read_data"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/tvReadData"
+        app:layout_constraintStart_toStartOf="@+id/tvReadData"
+        app:layout_constraintTop_toBottomOf="@+id/tvReadData" />
+
+    <Button
+        android:id="@+id/btnHideAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txt_hide_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReadData" />
+
+    <Button
+        android:id="@+id/btnShowAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_show_all"
+        app:layout_constraintEnd_toEndOf="@+id/btnHideAll"
+        app:layout_constraintStart_toStartOf="@+id/btnHideAll"
+        app:layout_constraintTop_toBottomOf="@+id/btnHideAll" />
 </androidx.constraintlayout.widget.ConstraintLayout>
