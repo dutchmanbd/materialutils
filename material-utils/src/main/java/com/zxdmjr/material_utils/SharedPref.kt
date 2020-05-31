@@ -37,4 +37,8 @@ class SharedPref(context: Context) {
         }
     }
 
+    fun clear(){
+        mSharedPref.edit().clear().apply()
+    }
+
 }
