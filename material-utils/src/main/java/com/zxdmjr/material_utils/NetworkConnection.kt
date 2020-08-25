@@ -21,7 +21,7 @@ class NetworkConnection(
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     }
 
-    private lateinit var networkCallback: ConnectivityManager.NetworkCallback
+    private var networkCallback: ConnectivityManager.NetworkCallback? = null
 
 
     override fun onActive() {
@@ -68,18 +68,20 @@ class NetworkConnection(
 
     private fun connectivityManagerCallback(): ConnectivityManager.NetworkCallback{
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            networkCallback = object : ConnectivityManager.NetworkCallback() {
-                override fun onLost(network: Network) {
-                    super.onLost(network)
-                    postValue(false)
-                }
+            if(networkCallback == null){
+                networkCallback = object : ConnectivityManager.NetworkCallback() {
+                    override fun onLost(network: Network) {
+                        super.onLost(network)
+                        postValue(false)
+                    }
 
-                override fun onAvailable(network: Network) {
-                    super.onAvailable(network)
-                    postValue(true)
+                    override fun onAvailable(network: Network) {
+                        super.onAvailable(network)
+                        postValue(true)
+                    }
                 }
             }
-            return networkCallback
+            return networkCallback!!
         } else{
             throw IllegalAccessError("Error")
         }
