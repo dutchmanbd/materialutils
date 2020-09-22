@@ -37,6 +37,16 @@ class SharedPref(context: Context) {
         }
     }
 
+    fun read(key: String, defValue: Long) =
+        mSharedPref.getLong(key, defValue)
+
+    fun write(key: String, value: Long){
+        mSharedPref.edit().apply {
+            putLong(key, value)
+            apply()
+        }
+    }
+
     fun clear(){
         mSharedPref.edit().clear().apply()
     }
