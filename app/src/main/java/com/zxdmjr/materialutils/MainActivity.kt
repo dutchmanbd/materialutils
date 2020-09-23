@@ -2,6 +2,7 @@ package com.zxdmjr.materialutils
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity() {
             toast("Write successfully")
 
         }
+
+
+        dataStorePref.read("pref_latitude", 0.0f).asLiveData().observe(this, Observer {
+            Log.d("MainActivity", "onCreate: $it")
+        })
 
         dataStorePref.read(DATA_KEY, "").asLiveData().observe(this, Observer { data->
             if(data.isNullOrEmpty()){

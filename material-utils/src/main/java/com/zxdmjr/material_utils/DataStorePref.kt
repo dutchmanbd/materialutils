@@ -107,25 +107,6 @@ class DataStorePref(context: Context) {
         }
     }
 
-    fun read(key: String, defValue: Double) =
-        dataStore.data
-            .catch { exception->
-                if(exception is NullPointerException){
-                    emit(emptyPreferences())
-                } else{
-                    throw exception
-                }
-            }
-            .map {preferences ->
-            preferences[preferencesKey<Double>(key)] ?: defValue
-        }
-
-    suspend fun write(key: String, value: Double){
-        dataStore.edit { preferences ->
-            preferences[preferencesKey<Double>(key)] = value
-        }
-    }
-
     suspend fun remove(key: String){
         dataStore.edit {preferences->
             preferences.remove(preferencesKey(key))
