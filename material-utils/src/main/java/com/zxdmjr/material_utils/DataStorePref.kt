@@ -3,6 +3,7 @@ package com.zxdmjr.material_utils
 import android.content.Context
 import androidx.datastore.DataStore
 import androidx.datastore.preferences.*
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
 class DataStorePref(context: Context) {
@@ -11,7 +12,15 @@ class DataStorePref(context: Context) {
         name = "${context.packageName}.DataStorePref"
     )
 
-    fun read(key: String, defValue: String) = dataStore.data.map {preferences ->
+    fun read(key: String, defValue: String) = dataStore.data
+        .catch { exception->
+            if(exception is NullPointerException){
+                emit(emptyPreferences())
+            } else{
+                throw exception
+            }
+        }
+        .map {preferences ->
         preferences[preferencesKey<String>(key)] ?: defValue
     }
 
@@ -22,7 +31,15 @@ class DataStorePref(context: Context) {
     }
 
     fun read(key: String, defValue: Boolean) =
-        dataStore.data.map {preferences ->
+        dataStore.data
+            .catch { exception->
+                if(exception is NullPointerException){
+                    emit(emptyPreferences())
+                } else{
+                    throw exception
+                }
+            }
+            .map {preferences ->
             preferences[preferencesKey<Boolean>(key)] ?: defValue
         }
 
@@ -33,7 +50,15 @@ class DataStorePref(context: Context) {
     }
 
     fun read(key: String, defValue: Int) =
-        dataStore.data.map {preferences ->
+        dataStore.data
+            .catch { exception->
+                if(exception is NullPointerException){
+                    emit(emptyPreferences())
+                } else{
+                    throw exception
+                }
+            }
+            .map {preferences ->
             preferences[preferencesKey<Int>(key)] ?: defValue
         }
 
@@ -44,7 +69,15 @@ class DataStorePref(context: Context) {
     }
 
     fun read(key: String, defValue: Long) =
-        dataStore.data.map {preferences ->
+        dataStore.data
+            .catch { exception->
+                if(exception is NullPointerException){
+                    emit(emptyPreferences())
+                } else{
+                    throw exception
+                }
+            }
+            .map {preferences ->
             preferences[preferencesKey<Long>(key)] ?: defValue
         }
 
@@ -56,7 +89,15 @@ class DataStorePref(context: Context) {
 
 
     fun read(key: String, defValue: Float) =
-        dataStore.data.map {preferences ->
+        dataStore.data
+            .catch { exception->
+                if(exception is NullPointerException){
+                    emit(emptyPreferences())
+                } else{
+                    throw exception
+                }
+            }
+            .map {preferences ->
             preferences[preferencesKey<Float>(key)] ?: defValue
         }
 
@@ -67,7 +108,15 @@ class DataStorePref(context: Context) {
     }
 
     fun read(key: String, defValue: Double) =
-        dataStore.data.map {preferences ->
+        dataStore.data
+            .catch { exception->
+                if(exception is NullPointerException){
+                    emit(emptyPreferences())
+                } else{
+                    throw exception
+                }
+            }
+            .map {preferences ->
             preferences[preferencesKey<Double>(key)] ?: defValue
         }
 
