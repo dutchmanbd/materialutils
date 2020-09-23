@@ -3,16 +3,21 @@ package com.zxdmjr.materialutils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
-import com.zxdmjr.material_utils.SharedPref
-import com.zxdmjr.material_utils.hide
-import com.zxdmjr.material_utils.show
-import com.zxdmjr.material_utils.toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
+import com.zxdmjr.material_utils.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private val sharedPref by lazy {
         SharedPref(applicationContext)
+    }
+
+    private val dataStorePref by lazy {
+        DataStorePref(applicationContext)
     }
 
     companion object{
@@ -35,19 +40,33 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             etData.setText("")
-            sharedPref.write(DATA_KEY, data)
+//            sharedPref.write(DATA_KEY, data)
+            lifecycleScope.launch {
+                dataStorePref.write(DATA_KEY, data)
+            }
             toast("Write successfully")
 
         }
 
-        btnReadData.setOnClickListener {
-            val data = sharedPref.read(DATA_KEY, "")
-
+        dataStorePref.read(DATA_KEY, "").asLiveData().observe(this, Observer { data->
             if(data.isNullOrEmpty()){
-                toast("No available data", position = Gravity.TOP)
-                return@setOnClickListener
+                //toast("No available data", position = Gravity.TOP)
+                return@Observer
             }
             tvReadData.text = data
+        })
+
+        btnReadData.setOnClickListener {
+//            val data = sharedPref.read(DATA_KEY, "")
+            dataStorePref.read(DATA_KEY, "").asLiveData().observe(this, Observer { data->
+                if(data.isNullOrEmpty()){
+                    toast("No available data", position = Gravity.TOP)
+                    return@Observer
+                }
+                tvReadData.text = data
+            })
+
+
         }
 
         btnHideAll.setOnClickListener {
