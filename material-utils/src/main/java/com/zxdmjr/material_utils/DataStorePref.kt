@@ -107,15 +107,16 @@ class DataStorePref(context: Context) {
         }
     }
 
-    suspend fun remove(key: String){
-        dataStore.edit {preferences->
-            preferences.remove(preferencesKey(key))
+    suspend fun <T> remove(key: Preferences.Key<T>){
+        dataStore.edit {preferences ->
+            preferences.remove(key)
         }
     }
 
     suspend fun clear(){
-        dataStore.edit {preferences->
-            preferences.clear()
+        dataStore.edit {
+            it.clear()
         }
     }
+
 }

@@ -49,6 +49,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnClear.setOnClickListener {
+            lifecycleScope.launch {
+                dataStorePref.clear()
+            }
+        }
+
 
         dataStorePref.read("pref_latitude", 0.0f).asLiveData().observe(this, Observer {
             Log.d("MainActivity", "onCreate: $it")

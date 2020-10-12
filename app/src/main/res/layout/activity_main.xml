@@ -81,4 +81,14 @@
         app:layout_constraintEnd_toEndOf="@+id/btnHideAll"
         app:layout_constraintStart_toStartOf="@+id/btnHideAll"
         app:layout_constraintTop_toBottomOf="@+id/btnHideAll" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/txt_clear"
+        app:layout_constraintEnd_toEndOf="@+id/btnShowAll"
+        app:layout_constraintStart_toStartOf="@+id/btnShowAll"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowAll" />
 </androidx.constraintlayout.widget.ConstraintLayout>
