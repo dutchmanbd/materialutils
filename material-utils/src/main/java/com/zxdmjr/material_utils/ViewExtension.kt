@@ -1,6 +1,5 @@
 package com.zxdmjr.material_utils
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.Gravity
 import android.view.View
