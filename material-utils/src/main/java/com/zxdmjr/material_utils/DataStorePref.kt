@@ -30,6 +30,8 @@ class DataStorePref(context: Context) {
         }
     }
 
+
+
     fun read(key: String, defValue: Boolean) =
         dataStore.data
             .catch { exception->

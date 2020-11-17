@@ -1,5 +1,6 @@
 package com.zxdmjr.materialutils
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             etData.setText("")
 //            sharedPref.write(DATA_KEY, data)
             lifecycleScope.launch {
+                dataStorePref.write("pref_latitude", 1.0f)
                 dataStorePref.write(DATA_KEY, data)
             }
             toast("Write successfully")
@@ -52,19 +54,24 @@ class MainActivity : AppCompatActivity() {
         btnClear.setOnClickListener {
             lifecycleScope.launch {
                 dataStorePref.clear()
+//                Intent(this@MainActivity, AuthActivity::class.java).let {
+//                    startActivity(it)
+//                    finish()
+//                }
             }
         }
 
 
-        dataStorePref.read("pref_latitude", 0.0f).asLiveData().observe(this, Observer {
-            Log.d("MainActivity", "onCreate: $it")
-        })
+//        dataStorePref.read("pref_latitude", 0.0f).asLiveData().observe(this, Observer {
+////            Log.d("MainActivity", "onCreate: $it")
+//        })
 
         dataStorePref.read(DATA_KEY, "").asLiveData().observe(this, Observer { data->
             if(data.isNullOrEmpty()){
                 //toast("No available data", position = Gravity.TOP)
                 return@Observer
             }
+            Log.d("MainActivity", "DATA_KEY: $data")
             tvReadData.text = data
         })
 
