@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8b09abd111b43878ac55929b28485cd)](https://www.codacy.com/manual/dutchmanbd/materialutils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dutchmanbd/materialutils&amp;utm_campaign=Badge_Grade)
 [![GitHub issues](https://img.shields.io/github/issues/dutchmanbd/materialutils)](https://github.com/dutchmanbd/materialutils/issues)
 [![Version](https://jitpack.io/v/dutchmanbd/materialutils.svg?label=lastest)](https://jitpack.io/#dutchmanbd/materialutils)
-[![Version](https://img.shields.io/github/v/release/dutchmanbd/materialutils)](https://img.shields.io/github/v/release/dutchmanbd/materialutils)
+
 
 
 Material Util Project For Kotlin
