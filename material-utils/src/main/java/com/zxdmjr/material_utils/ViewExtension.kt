@@ -20,3 +20,5 @@ fun Context.toast(message: String, length: Int = Toast.LENGTH_SHORT, position: I
     toast.show()
 }
 
+fun AppCompatActivity.findNavController(@IdRes resId: Int) = (supportFragmentManager.findFragmentById(resId) as NavHostFragment).navController
+
