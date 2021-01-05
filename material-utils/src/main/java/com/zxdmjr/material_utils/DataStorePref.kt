@@ -1,8 +1,9 @@
 package com.zxdmjr.material_utils
 
 import android.content.Context
-import androidx.datastore.DataStore
+import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.*
+import androidx.datastore.preferences.core.*
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
