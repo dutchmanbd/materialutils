@@ -44,6 +44,18 @@ pbMain.show()
 tvName.hide()
 pbMain.hide()
 ```
+
+#### Show keyboard:
+```
+etName.showKeyboard()
+```
+
+#### Hide keyboard:
+```
+etName.hideKeyboard()
+```
+
+
 ## Context Extension
 ### Show toast from activity
 ```
@@ -54,6 +66,20 @@ toast("Your message here")
 ```
 context?.toast("Your message here")
 ```
+
+### findNavigationController in activity
+
+```
+findNavController(binding.navMainFragment.id)
+```
+
+### start and startAndFinish activity
+
+```
+start(Intent(this, AuthActivity::class.java))
+startAndFinish(Intent(this, AuthActivity::class.java))
+```
+
 ## SharedPreference
 
 ### Init SharedPref
