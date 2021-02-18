@@ -1,4 +1,4 @@
-package com.zxdmjr.material_utils
+package com.zxdmjr.material_utils.store
 
 import android.app.Activity
 import android.content.Context

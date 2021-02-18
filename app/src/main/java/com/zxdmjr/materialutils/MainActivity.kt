@@ -1,5 +1,6 @@
 package com.zxdmjr.materialutils
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +8,9 @@ import android.view.Gravity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import com.zxdmjr.material_utils.*
+import com.zxdmjr.material_utils.extensions.*
+import com.zxdmjr.material_utils.store.DataStorePref
+import com.zxdmjr.material_utils.store.SharedPref
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.launch
 
@@ -30,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnShowToast.setOnClickListener {
-            toast("Hello Toast", position = Gravity.TOP)
+            toast("Navigate to auth",
+                position = Gravity.TOP)
+            navigateToAuthActivity()
         }
 
         btnWriteData.setOnClickListener {
@@ -41,7 +46,6 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             etData.setText("")
-//            sharedPref.write(DATA_KEY, data)
             lifecycleScope.launch {
                 dataStorePref.write("pref_latitude", 1.0f)
                 dataStorePref.write(DATA_KEY, data)
@@ -53,21 +57,12 @@ class MainActivity : AppCompatActivity() {
         btnClear.setOnClickListener {
             lifecycleScope.launch {
                 dataStorePref.clear()
-//                Intent(this@MainActivity, AuthActivity::class.java).let {
-//                    startActivity(it)
-//                    finish()
-//                }
             }
         }
 
 
-//        dataStorePref.read("pref_latitude", 0.0f).asLiveData().observe(this, Observer {
-////            Log.d("MainActivity", "onCreate: $it")
-//        })
-
         dataStorePref.read(DATA_KEY, "").asLiveData().observe(this, Observer { data->
             if(data.isNullOrEmpty()){
-                //toast("No available data", position = Gravity.TOP)
                 return@Observer
             }
             Log.d("MainActivity", "DATA_KEY: $data")
@@ -75,7 +70,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         btnReadData.setOnClickListener {
-//            val data = sharedPref.read(DATA_KEY, "")
             dataStorePref.read(DATA_KEY, "").asLiveData().observe(this, Observer { data->
                 if(data.isNullOrEmpty()){
                     toast("No available data", position = Gravity.TOP)
@@ -83,8 +77,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 tvReadData.text = data
             })
-
-
         }
 
         btnHideAll.setOnClickListener {
@@ -103,5 +95,9 @@ class MainActivity : AppCompatActivity() {
             tvReadData.show()
         }
 
+    }
+
+    private fun navigateToAuthActivity(){
+        startAndFinish(Intent(this, AuthActivity::class.java))
     }
 }

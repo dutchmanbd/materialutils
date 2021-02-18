@@ -1,4 +1,4 @@
-package com.zxdmjr.material_utils
+package com.zxdmjr.material_utils.store
 
 import android.content.Context
 import androidx.datastore.core.DataStore

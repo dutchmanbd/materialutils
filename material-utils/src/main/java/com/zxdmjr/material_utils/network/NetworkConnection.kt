@@ -1,4 +1,4 @@
-package com.zxdmjr.material_utils
+package com.zxdmjr.material_utils.network
 
 import android.annotation.TargetApi
 import android.content.BroadcastReceiver
