@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import com.zxdmjr.material_utils.extensions.*
+import com.zxdmjr.material_utils.network.NetworkConnection
 import com.zxdmjr.material_utils.store.DataStorePref
 import com.zxdmjr.material_utils.store.SharedPref
 import kotlinx.android.synthetic.main.activity_main.*
@@ -95,7 +96,18 @@ class MainActivity : AppCompatActivity() {
             tvReadData.show()
         }
 
+        netConnection = NetworkConnection(applicationContext)
+        netConnection?.observe(this, Observer { hasConnected ->
+            if(hasConnected){
+                toast("connected")
+            } else {
+                toast("disconnected")
+            }
+        })
+
     }
+
+    private var netConnection: NetworkConnection? = null
 
     private fun navigateToAuthActivity(){
         startAndFinish(Intent(this, AuthActivity::class.java))

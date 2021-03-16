@@ -113,3 +113,19 @@ sharedPref.write(YOUR_KEY, 704)
 Boolean
 sharedPref.write(YOUR_KEY, true)
 ```
+## Network Connection
+### observe network connection realtime in activity or fragment
+#### Example
+```
+private var netConnection: NetworkConnection? = null
+override fun onCreate(savedInstanceState: Bundle?) {
+    netConnection = NetworkConnection(applicationContext)
+    netConnection?.observe(this, Observer { hasConnected ->
+        if(hasConnected){
+            toast("connected")
+        } else {
+            toast("disconnected")
+        }
+    })
+}
+```
