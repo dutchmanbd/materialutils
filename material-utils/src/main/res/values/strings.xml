@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">material-utils</string>
+    <string name="permanently_denied">Permanently Denied</string>
+    <string name="please_enable_permission">Please enable permission from application\'s settings</string>
 </resources>

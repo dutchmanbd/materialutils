@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
@@ -105,6 +106,19 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+
+        val resolutionForResult =
+            registerForActivityResult(
+                ActivityResultContracts.StartIntentSenderForResult()
+            ) { activityResult ->
+                activityResult.checkResultAndExecute {
+//                    fetchUserCurrentLocation()
+                }.onFailure {
+                    toast(it.message ?: "Something went wrong")
+                }
+            }
+
+//        resolutionForResult.launch()
     }
 
     private var netConnection: NetworkConnection? = null
